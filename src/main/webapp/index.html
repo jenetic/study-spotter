@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Spotter</title>
 </head>
-<body>
+<body onload="loadReviews()">
     <h1>Study Spotter</h1>
+
     <form class="user-review" action="/form-handler" method="POST">
         <h2>Leave a Review</h2>
         <p>Rating out of 5</p>
         <textarea name="rating"></textarea>
         <p>Review</p>
-        <textarea name="review"></textarea>
+        <textarea name="description"></textarea>
         <br/>
         <input type="submit" />
     </form>
+
+    <div id="review-list"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>

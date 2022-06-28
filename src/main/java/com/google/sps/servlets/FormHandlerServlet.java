@@ -23,18 +23,18 @@ public class FormHandlerServlet extends HttpServlet {
     // Get the value entered in the form.
     
     String rating = Jsoup.clean(request.getParameter("rating"), Whitelist.none());
-    String review = Jsoup.clean(request.getParameter("review"), Whitelist.none());
+    String description = Jsoup.clean(request.getParameter("description"), Whitelist.none());
 
     // Create instance of Datastore
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     
-    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Messages");    
-    FullEntity taskEntity =
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Reviews");    
+    FullEntity reviewEntity =
     Entity.newBuilder(keyFactory.newKey())
         .set("rating", rating)
-        .set("review", review)
+        .set("description", description)
         .build();
-    datastore.put(taskEntity);
+    datastore.put(reviewEntity);
 
     // Redirect back to website
     response.sendRedirect("/");

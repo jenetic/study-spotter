@@ -1,2 +1,4 @@
 /home/jlam/study-spotter/src/main/java/com/google/sps/servlets/FormHandlerServlet.java
+/home/jlam/study-spotter/src/main/java/com/google/sps/servlets/DisplayReviewsServlet.java
 /home/jlam/study-spotter/src/main/java/com/google/sps/ServerMain.java
+/home/jlam/study-spotter/src/main/java/com/google/sps/data/Review.java
