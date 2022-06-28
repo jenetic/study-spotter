@@ -21,9 +21,9 @@ const createReviewElement = (review) => {
     const { rating, description } = review;
 
     const reviewElement = document.createElement('div');
-    const ratingElement = document.createElement('h2');
+    const ratingElement = document.createElement('h3');
     const descriptionElement = document.createElement('p');
-    ratingElement.textContent = rating + " Stars";
+    ratingElement.textContent = rating + " / 5 Stars";
     descriptionElement.textContent = description;
     reviewElement.appendChild(ratingElement);
     reviewElement.appendChild(descriptionElement);
