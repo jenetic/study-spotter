@@ -22,6 +22,8 @@ public class FormHandlerServlet extends HttpServlet {
 
     // Get the value entered in the form.
     
+    long timestamp = System.currentTimeMillis();
+    String name = Jsoup.clean(request.getParameter("name"), Whitelist.none());
     String rating = Jsoup.clean(request.getParameter("rating"), Whitelist.none());
     String description = Jsoup.clean(request.getParameter("description"), Whitelist.none());
 
@@ -31,6 +33,8 @@ public class FormHandlerServlet extends HttpServlet {
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("Reviews");    
     FullEntity reviewEntity =
     Entity.newBuilder(keyFactory.newKey())
+        .set("timestamp", timestamp)
+        .set("name", name)
         .set("rating", rating)
         .set("description", description)
         .build();
