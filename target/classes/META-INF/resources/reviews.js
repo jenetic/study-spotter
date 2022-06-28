@@ -6,8 +6,6 @@ const loadReviews = async () => {
     const response = await fetch('/display-reviews');
     const reviewList = await response.json();
 
-    // console.log(reviewList);
-
     const reviewsLocation = document.getElementById("review-list");
     reviewList.forEach((review) => {
         reviewsLocation.appendChild(createReviewElement(review));
@@ -17,6 +15,7 @@ const loadReviews = async () => {
 /**
  * Creates element that represents a review
  * @param {Review}
+ * @return {Element}
  */
 const createReviewElement = (review) => {
     const { rating, description } = review;
