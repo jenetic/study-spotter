@@ -1,4 +1,19 @@
 /**
+ * Submits form and does POST request to datastore
+ */
+const submitReview = () => {
+
+    // Check if rating is a number between 0 and 5
+
+
+    // Call SubmitReviewServlet
+    document.getElementById('review-submission-form').action = '/submit-review';
+    document.getElementById('review-submission-form').method = 'POST';
+    document.getElementById('review-submission-form').submit();
+
+}
+
+/**
  * Loads reviews onto DOM
  */
 const loadReviews = async () => {
