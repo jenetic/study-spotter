@@ -5,7 +5,6 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.FullEntity;
 import com.google.cloud.datastore.KeyFactory;
-import com.google.gson.Gson;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,10 +20,9 @@ public class SubmitReviewServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
     // Get the value entered in the form.
-    
     long timestamp = System.currentTimeMillis();
     String name = Jsoup.clean(request.getParameter("name"), Whitelist.none());
-    String rating = Jsoup.clean(request.getParameter("rating"), Whitelist.none());
+    double rating = Double.parseDouble(Jsoup.clean(request.getParameter("rating"), Whitelist.none()));
     String description = Jsoup.clean(request.getParameter("description"), Whitelist.none());
 
     // Create instance of Datastore
@@ -32,12 +30,12 @@ public class SubmitReviewServlet extends HttpServlet {
     
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("Reviews");    
     FullEntity reviewEntity =
-    Entity.newBuilder(keyFactory.newKey())
-        .set("timestamp", timestamp)
-        .set("name", name)
-        .set("rating", rating)
-        .set("description", description)
-        .build();
+        Entity.newBuilder(keyFactory.newKey())
+            .set("timestamp", timestamp)
+            .set("name", name)
+            .set("rating", rating)
+            .set("description", description)
+            .build();
     datastore.put(reviewEntity);
 
     // Redirect back to website
