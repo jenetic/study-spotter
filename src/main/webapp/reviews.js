@@ -62,6 +62,15 @@ const loadReviews = async () => {
 }
 
 /**
+ * Convert unix timestamp to date in form mm/dd/yyyy
+ */
+const timestampToDate = timestamp => {
+    const date = new Date(timestamp);
+    const month = parseInt(date.getMonth()) + 1;
+    return month + "/" + date.getDate() + "/" + date.getFullYear();
+}
+
+/**
  * Creates element that represents a review
  * @param {Review}
  * @return {Element}
@@ -77,7 +86,7 @@ const createReviewElement = (review) => {
 
     ratingElement.textContent = rating + " / 5 Stars";
     nameElement.textContent = name;
-    dateElement.textContent = ' at ' + timestamp;
+    dateElement.textContent = ' at ' + timestampToDate(timestamp);
     descriptionElement.textContent = description;
 
     nameElement.appendChild(dateElement);
