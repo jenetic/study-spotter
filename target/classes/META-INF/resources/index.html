@@ -14,15 +14,15 @@
     <form id="review-submission-form">
         <h2>Leave a Review</h2>
         <p>Name</p>
-        <textarea name="name"></textarea>
+        <textarea id="name" name="name"></textarea>
         <p>Rating out of 5</p>
         <textarea id="rating" name="rating"></textarea>
         <p>Review</p>
-        <textarea name="description"></textarea>
+        <textarea id="description" name="description"></textarea>
         <br/>
         <input type="button" onclick="submitReview()" value="Submit"/>
     </form>
-    <p id="error-message">Rating must be a number between 0 and 5.</p>
+    <p id="error-message"></p>
 
     <h2>Reviews</h2>
 

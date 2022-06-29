@@ -1,14 +1,43 @@
+
+// Helper methods for form error handling
+
+/**
+ * Checks if string is empty (whitespace counts as empty)
+ */
+const isEmpty = str => {
+    return !str.trim().length;
+}
+
+/**
+ * Checks if a string is a number between start and end, inclusive
+ */
+const isNumberBetween = (str, start, end) => {
+    if (str == "" || str < start || str > end || !(!isNaN(str) && !isNaN(parseFloat(str)))) {
+        return false;
+    }
+    return true;
+}
+
 /**
  * Submits form and does POST request to datastore
  */
 const submitReview = () => {
 
-    // Check if rating is a number between 0 and 5
-    const ratingString = document.getElementById("rating").value;
-    console.log("submitted");
-    if (ratingString == "" || ratingString < 0 || ratingString > 5 || !(!isNaN(ratingString) && !isNaN(parseFloat(ratingString)))) {
-        document.getElementById("error-message").style.display = 'block';
-        console.log("error");
+    const name = document.getElementById("name").value;
+    const rating = document.getElementById("rating").value;
+    const description = document.getElementById("description").value;
+
+    const errorMessageElement = document.getElementById("error-message");
+
+    // Show error message if any field is empty
+    if (isEmpty(name) || isEmpty(rating) || isEmpty(description)) {
+        errorMessageElement.textContent = "Input fields cannot be empty.";
+        return;
+    }
+
+    // Show error message if rating is a number between 0 and 5
+    if (!isNumberBetween(rating, 0, 5)) {
+        errorMessageElement.textContent = "Rating must be a number between 0 and 5.";
         return;
     }
 
