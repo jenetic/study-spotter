@@ -23,7 +23,7 @@ public class DisplayReviewsServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     Query<Entity> query =
-        Query.newEntityQueryBuilder().setKind("Reviews").build();
+        Query.newEntityQueryBuilder().setKind("Reviews").setOrderBy(OrderBy.desc("timestamp")).build();
     QueryResults<Entity> results = datastore.run(query);
 
     List<Review> reviews = new ArrayList<>();
