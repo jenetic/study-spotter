@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Spotter</title>
+
+    <link href='style.css' rel='stylesheet'>
 </head>
 <body onload="loadReviews()">
     <h1>Example Location</h1>
@@ -14,12 +16,13 @@
         <p>Name</p>
         <textarea name="name"></textarea>
         <p>Rating out of 5</p>
-        <textarea name="rating"></textarea>
+        <textarea id="rating" name="rating"></textarea>
         <p>Review</p>
         <textarea name="description"></textarea>
         <br/>
         <input type="button" onclick="submitReview()" value="Submit"/>
     </form>
+    <p id="error-message">Rating must be a number between 0 and 5.</p>
 
     <h2>Reviews</h2>
 

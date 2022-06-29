@@ -4,13 +4,18 @@
 const submitReview = () => {
 
     // Check if rating is a number between 0 and 5
-
+    const ratingString = document.getElementById("rating").value;
+    console.log("submitted");
+    if (ratingString == "" || ratingString < 0 || ratingString > 5 || !(!isNaN(ratingString) && !isNaN(parseFloat(ratingString)))) {
+        document.getElementById("error-message").style.display = 'block';
+        console.log("error");
+        return;
+    }
 
     // Call SubmitReviewServlet
     document.getElementById('review-submission-form').action = '/submit-review';
     document.getElementById('review-submission-form').method = 'POST';
     document.getElementById('review-submission-form').submit();
-
 }
 
 /**
