@@ -1,3 +1,5 @@
+// Handles SPA routing
+
 const pageTitle = "Study Spotter"
 
 document.addEventListener("click", (e) => {
@@ -21,15 +23,20 @@ const routes = {
         description: "this is the homepage"
     },
     ucla: {
-        template: "/templates/ucla.html",
+        template: "/templates/colleges/ucla.html",
         title: "UCLA | " + pageTitle,
         description: "UCLA page"
     },
     ucsd: {
-        template: "/templates/ucsd.html",
+        template: "/templates/colleges/ucsd.html",
         title: "UCSD | " + pageTitle,
         description: "UCSD page"
     },
+    reviews: {
+        template: "/templates/reviews.html",
+        title: "Reviews | " + pageTitle,
+        description: "Reviews page"
+    }
 }
 
 const hashRoute = (event) => {

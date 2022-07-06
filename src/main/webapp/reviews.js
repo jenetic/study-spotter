@@ -96,3 +96,5 @@ const createReviewElement = (review) => {
 
     return reviewElement;
 }
+
+window.onload = loadReviews();
