@@ -8,7 +8,7 @@ document.addEventListener("click", (e) => {
         return;
     }
     e.preventDefault();
-    hashRoute();
+    hashRoute(); 
 })
 
 const routes = {
