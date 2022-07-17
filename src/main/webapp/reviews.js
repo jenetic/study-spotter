@@ -27,6 +27,14 @@ const submitReview = () => {
     const rating = document.getElementById("rating").value;
     const description = document.getElementById("description").value;
 
+    // // Get location and college elements
+    const locationElement = document.getElementById("location-name").value = "i hate this";
+    const collegeElement = document.getElementById("college-name").value = "i hate this2";
+
+    // locationElement.value = locationElement.textContent;
+    // collegeElement.value = collegeElement.textContent;
+
+
     const errorMessageElement = document.getElementById("error-message");
 
     // Show error message if any field is empty
@@ -50,7 +58,7 @@ const submitReview = () => {
 /**
  * Loads reviews onto DOM
  */
-const loadReviews = async (location) => {
+const loadReviews = async (location, college) => {
 
     // Fetch data and convert to JSON
     const response = await fetch('/display-reviews');
@@ -63,13 +71,15 @@ const loadReviews = async (location) => {
     
     // Update reviews to display location
 
-    // If page is refreshed, location would be null, so use info from local storage and don't set a new one
     if (location != null) {
         localStorage.setItem('location', location);
-        console.log("location is not null");
+        localStorage.setItem('college', college);
     }
     
-    document.getElementById("location-name").textContent = localStorage.getItem('location');
+    // If page is refreshed, location (function's argument) would be null since loadReviews() is called on load
+    // so use info from local storage and don't set a new one
+    document.getElementById("location-name").value = localStorage.getItem('location');
+    document.getElementById("college-name").value = localStorage.getItem('college');
 }
 
 /**
@@ -109,8 +119,3 @@ const createReviewElement = (review) => {
 }
 
 window.onload = loadReviews();
-
-// Keep track of current location in local storage
-const storeCurrentLocation = () => {
-    
-}

@@ -21,6 +21,10 @@ public class SubmitReviewServlet extends HttpServlet {
 
     // Get the value entered in the form.
     long timestamp = System.currentTimeMillis();
+
+    String location = Jsoup.clean(request.getParameter("location-name"), Whitelist.none());
+    String college = Jsoup.clean(request.getParameter("college-name"), Whitelist.none());
+
     String name = Jsoup.clean(request.getParameter("name"), Whitelist.none());
     double rating = Double.parseDouble(Jsoup.clean(request.getParameter("rating"), Whitelist.none()));
     String description = Jsoup.clean(request.getParameter("description"), Whitelist.none());
@@ -32,6 +36,8 @@ public class SubmitReviewServlet extends HttpServlet {
     FullEntity reviewEntity =
         Entity.newBuilder(keyFactory.newKey())
             .set("timestamp", timestamp)
+            .set("college", college)
+            .set("location", location)
             .set("name", name)
             .set("rating", rating)
             .set("description", description)
