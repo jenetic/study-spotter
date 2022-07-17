@@ -1,0 +1,102 @@
+{
+  "studyspots": {
+    "MLK Library": {
+      "name": "Dr. Martin Luther King Library",
+      "address": "150 E San Fernando St, San Jose, CA 95112",
+      "college": "San Jose State University",
+      "hours": [
+        "8-20",
+        "8-20",
+        "8-20",
+        "8-20",
+        "8-18",
+        "8-18",
+        ""
+      ]
+    },
+    "Student Union": {
+      "name": "Student Union",
+      "address": "211 S 9th St, San Jose, CA 95192",
+      "college": "San Jose State University",
+      "hours": [
+        "",
+        "",
+        "",
+        "16-23",
+        "16-23",
+        "16-23",
+        "12-19"
+      ]
+    },
+    "Engineering Building": {
+      "name": "Charles W Davidson College of Engineering",
+      "address": "1 Washington Square, San Jose, CA 95192",
+      "college": "San Jose State University",
+      "hours": [
+        "7-17",
+        "7-17",
+        "7-17",
+        "7-17",
+        "7-17",
+        "",
+        ""
+      ]
+    },
+    "Geisel Library": {
+      "name": "Geisel Library",
+      "address": "9500 Gilman Dr, La Jolla, CA 92093",
+      "college": "UC San Diego",
+      "hours": [
+        "7.30-22",
+        "7.30-22",
+        "7.30-22",
+        "7.30-22",
+        "7.30-22",
+        "10-18",
+        "10-22"
+      ]
+    },
+    "Price Center Commuter Lounge": {
+      "name": "Price Center Commuter Lounge",
+      "address": "Price Center, La Jolla, CA 92093",
+      "college": "UC San Diego",
+      "hours": [
+        "7-20",
+        "7-20",
+        "7-20",
+        "7-20",
+        "7-20",
+        "10-17",
+        ""
+      ]
+    },
+    "Duffield Atrium": {
+      "name": "Duffield Atrium",
+      "address": "343 Campus Rd, Ithaca, NY 14853",
+      "college": "Cornell University",
+      "hours": [
+        "24",
+        "24",
+        "24",
+        "24",
+        "24",
+        "24",
+        "24"
+      ]
+    },
+    "Uris Library": {
+      "name": "Uris Library",
+      "address": "160 Ho Plaza, Ithaca, NY 14853",
+      "college": "Cornell University",
+      "hours": [
+        "24",
+        "24",
+        "8-23",
+        "24",
+        "24",
+        "24",
+        "24"
+      ]
+    }
+  }
+}
