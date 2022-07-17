@@ -50,7 +50,8 @@ const submitReview = () => {
 /**
  * Loads reviews onto DOM
  */
-const loadReviews = async () => {
+const loadReviews = async (location) => {
+
     // Fetch data and convert to JSON
     const response = await fetch('/display-reviews');
     const reviewList = await response.json();
@@ -59,6 +60,16 @@ const loadReviews = async () => {
     reviewList.forEach((review) => {
         reviewsLocation.appendChild(createReviewElement(review));
     });
+    
+    // Update reviews to display location
+
+    // If page is refreshed, location would be null, so use info from local storage and don't set a new one
+    if (location != null) {
+        localStorage.setItem('location', location);
+        console.log("location is not null");
+    }
+    
+    document.getElementById("location-name").textContent = localStorage.getItem('location');
 }
 
 /**
@@ -95,4 +106,11 @@ const createReviewElement = (review) => {
     reviewElement.appendChild(descriptionElement);
 
     return reviewElement;
+}
+
+window.onload = loadReviews();
+
+// Keep track of current location in local storage
+const storeCurrentLocation = () => {
+    
 }
