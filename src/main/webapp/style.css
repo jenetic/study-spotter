@@ -11,19 +11,15 @@ body {
     font-family: 'Inconsolata', monospace;
     background-color: var(--bg);
     color: var(--text);
-
-
 }
 
 .menubar {
-    position: fixed;
     font-size: 20px;
     background-color: black;
     padding-left: 10px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 
 
 .example::-webkit-scrollbar {
@@ -71,10 +67,13 @@ p {
     /* Black */
     overflow-x: hidden;
     /* Disable horizontal scroll */
-    padding-top: 100px;
     padding-left: 10px;
     display: flex;
     flex-direction: column;
+}
+
+.all{
+
 }
 
 .smaller_text {
@@ -107,7 +106,6 @@ p {
 
 .map {
     border-radius: 10%;
-    ;
 }
 
 .icons {
@@ -127,10 +125,8 @@ a {
 
 /* Style page content */
 .main {
-
     margin-left: 1150px;
     /* Same as the width of the sidebar */
-    padding: 50px;
 }
 
 img {

@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+:root {
+    --button: rgb(10, 178, 133);
+    --bg: #ffffff;
+    --text: rgb(255, 255, 255);
+
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.menubar {
+    font-size: 20px;
+    background-color: black;
+    padding-left: 10px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+
+p {
+    color: --text;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+.tag_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.rect_background {
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    background: var(--button);
+    border-radius: 4px;
+}
+
+.sidebar {
+    height: 100%;
+    /* Full-height: remove this if you want "auto" height */
+    width: 1100px;
+    /* Set the width of the sidebar */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.all{
+
+}
+
+.smaller_text {
+    font-size: 18px;
+}
+
+.bigger_text {
+    font-size: 26px;
+}
+
+.text_box {
+    background-color: rgb(40, 54, 72);
+    padding: 10px 10px;
+    text-align: left;
+    border-radius: 10%;
+    width: 380px;
+    color: --text
+}
+
+.text_box_1 {
+    background-color: rgb(40, 54, 72);
+    padding: 10px 10px;
+    text-align: left;
+    border-radius: 10%;
+    width: 300px;
+    color: --text;
+    line-height: 20px;
+    align-items: center;
+}
+
+.map {
+    border-radius: 10%;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    justify-content: space-around;
+    color: rgb(197, 227, 255);
+}
+
+a {
+    text-decoration: none;
+    /* remove underline */
+    color: inherit;
+    /* remove blue */
+}
+
+/* Style page content */
+.main {
+    margin-left: 1150px;
+    /* Same as the width of the sidebar */
+}
+
+img {
+    border-radius: 10%;
+}
+
+
+.academics {
+    padding: 10px 20px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg)
+}
+
+.line_height {
+    line-height: 20px;
+}
+
+
+.card {
+    padding: 5px 10px;
+    width: 400px;
+    border-radius: 4px;
+    background-color: rgb(0, 162, 255);
+}
+
+.exp {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.proj {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
