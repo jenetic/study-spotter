@@ -129,6 +129,11 @@ a {
     /* Same as the width of the sidebar */
 }
 
+
+.titles{
+   color: rgb(0, 162, 255);
+}
+
 img {
     border-radius: 10%;
 }
