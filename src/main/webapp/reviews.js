@@ -36,19 +36,17 @@ const createReviewElement = (review) => {
     const { timestamp, name, rating, description } = review;
 
     const reviewElement = document.createElement('div');
-    const ratingElement = document.createElement('h3');
-    const nameElement = document.createElement('p');
-    const dateElement = document.createElement('span');
+    const nameAndDateElement = document.createElement('h3');
+    const ratingElement = document.createElement('p');
+    ratingElement.setAttribute('class', 'rating-element');
     const descriptionElement = document.createElement('p');
 
-    ratingElement.textContent = rating + " / 5 Stars";
-    nameElement.textContent = name;
-    dateElement.textContent = ' at ' + timestampToDate(timestamp);
+    ratingElement.textContent = rating + " / 5 Stars" ;
+    nameAndDateElement.textContent = name + ' at ' + timestampToDate(timestamp);
     descriptionElement.textContent = description;
 
-    nameElement.appendChild(dateElement);
+    reviewElement.appendChild(nameAndDateElement);
     reviewElement.appendChild(ratingElement);
-    reviewElement.appendChild(nameElement);
     reviewElement.appendChild(descriptionElement);
 
     return reviewElement;
@@ -62,10 +60,6 @@ const submitReview = () => {
     const name = document.getElementById("name").value;
     const rating = document.getElementById("rating").value;
     const description = document.getElementById("description").value;
-
-    // // Get location and college elements
-    const locationElement = document.getElementById("location-name").value;
-    const collegeElement = document.getElementById("college-name").value;
 
     const errorMessageElement = document.getElementById("error-message");
 
@@ -105,8 +99,6 @@ const loadReviews = async (location, college) => {
     reviewList.forEach((review) => {
         if (review.location === localStorage.getItem('location') && review.college === localStorage.getItem('college')) {
             reviewsLocation.appendChild(createReviewElement(review));
-        } else {
-            console.log(review);
         }
     });
     

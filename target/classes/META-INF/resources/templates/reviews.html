@@ -8,18 +8,16 @@
 
             <div id="leave-review-section">
                 <h2 id="leave-review-header">Leave a review!</h2>
-                <div>
-                    <p>Name <span><input id="name" name="name"></span></p>
-                </div>
-                <div>
+                <div id="name-and-rating">
+                    <p class="pad">Name <span><input id="name" name="name"></span></p>
                     <p>Rating (out of 5) <span><input id="rating" name="rating"></span></p>
                 </div>
-                <div>
-                    <p>Review</p>
+                <div id="review-input">
+                    <p id="review-input-header">Review</p>
                     <textarea id="description" name="description"></textarea>
                 </div>
                 <div>
-                    <input type="button" onclick="submitReview()" value="Submit"/
+                    <input id="submit-button" type="button" onclick="submitReview()" value="Submit"/>
                 </div>
             </div>
         </form>
