@@ -124,7 +124,7 @@ a {
 }
 
 /* Style page content */
-.main {
+#card-collection {
     margin-left: 1150px;
     /* Same as the width of the sidebar */
 }
