@@ -45,6 +45,9 @@ public class SubmitReviewServlet extends HttpServlet {
     datastore.put(reviewEntity);
 
     // Redirect back to website
-    response.sendRedirect("/");
+    // response.sendRedirect("/");
+    String referer = request.getHeader("Referer");
+    response.sendRedirect(referer);
+
   }
 }
