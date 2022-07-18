@@ -19,6 +19,42 @@ const isNumberBetween = (str, start, end) => {
 }
 
 /**
+ * Convert unix timestamp to date in form mm/dd/yyyy
+ */
+const timestampToDate = timestamp => {
+    const date = new Date(timestamp);
+    const month = parseInt(date.getMonth()) + 1;
+    return month + "/" + date.getDate() + "/" + date.getFullYear();
+}
+
+/**
+ * Creates element that represents a review
+ * @param {Review}
+ * @return {Element}
+ */
+const createReviewElement = (review) => {
+    const { timestamp, name, rating, description } = review;
+
+    const reviewElement = document.createElement('div');
+    const ratingElement = document.createElement('h3');
+    const nameElement = document.createElement('p');
+    const dateElement = document.createElement('span');
+    const descriptionElement = document.createElement('p');
+
+    ratingElement.textContent = rating + " / 5 Stars";
+    nameElement.textContent = name;
+    dateElement.textContent = ' at ' + timestampToDate(timestamp);
+    descriptionElement.textContent = description;
+
+    nameElement.appendChild(dateElement);
+    reviewElement.appendChild(ratingElement);
+    reviewElement.appendChild(nameElement);
+    reviewElement.appendChild(descriptionElement);
+
+    return reviewElement;
+}
+
+/**
  * Submits form and does POST request to datastore
  */
 const submitReview = () => {
@@ -78,42 +114,6 @@ const loadReviews = async (location, college) => {
     // so use info from local storage and don't set a new one
     document.getElementById("location-name").value = localStorage.getItem('location');
     document.getElementById("college-name").value = localStorage.getItem('college');
-}
-
-/**
- * Convert unix timestamp to date in form mm/dd/yyyy
- */
-const timestampToDate = timestamp => {
-    const date = new Date(timestamp);
-    const month = parseInt(date.getMonth()) + 1;
-    return month + "/" + date.getDate() + "/" + date.getFullYear();
-}
-
-/**
- * Creates element that represents a review
- * @param {Review}
- * @return {Element}
- */
-const createReviewElement = (review) => {
-    const { timestamp, name, rating, description } = review;
-
-    const reviewElement = document.createElement('div');
-    const ratingElement = document.createElement('h3');
-    const nameElement = document.createElement('p');
-    const dateElement = document.createElement('span');
-    const descriptionElement = document.createElement('p');
-
-    ratingElement.textContent = rating + " / 5 Stars";
-    nameElement.textContent = name;
-    dateElement.textContent = ' at ' + timestampToDate(timestamp);
-    descriptionElement.textContent = description;
-
-    nameElement.appendChild(dateElement);
-    reviewElement.appendChild(ratingElement);
-    reviewElement.appendChild(nameElement);
-    reviewElement.appendChild(descriptionElement);
-
-    return reviewElement;
 }
 
 window.onload = loadReviews();
