@@ -28,12 +28,8 @@ const submitReview = () => {
     const description = document.getElementById("description").value;
 
     // // Get location and college elements
-    const locationElement = document.getElementById("location-name").value = "i hate this";
-    const collegeElement = document.getElementById("college-name").value = "i hate this2";
-
-    // locationElement.value = locationElement.textContent;
-    // collegeElement.value = collegeElement.textContent;
-
+    const locationElement = document.getElementById("location-name").value;
+    const collegeElement = document.getElementById("college-name").value;
 
     const errorMessageElement = document.getElementById("error-message");
 
@@ -60,21 +56,23 @@ const submitReview = () => {
  */
 const loadReviews = async (location, college) => {
 
+    if (location != null) {
+        localStorage.setItem('location', location);
+        localStorage.setItem('college', college);
+    }
+
     // Fetch data and convert to JSON
     const response = await fetch('/display-reviews');
     const reviewList = await response.json();
 
     const reviewsLocation = document.getElementById("review-list");
     reviewList.forEach((review) => {
-        reviewsLocation.appendChild(createReviewElement(review));
+        if (review.location === localStorage.getItem('location') && review.college === localStorage.getItem('college')) {
+            reviewsLocation.appendChild(createReviewElement(review));
+        } else {
+            console.log(review);
+        }
     });
-    
-    // Update reviews to display location
-
-    if (location != null) {
-        localStorage.setItem('location', location);
-        localStorage.setItem('college', college);
-    }
     
     // If page is refreshed, location (function's argument) would be null since loadReviews() is called on load
     // so use info from local storage and don't set a new one

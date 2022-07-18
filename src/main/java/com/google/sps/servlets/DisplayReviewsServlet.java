@@ -32,11 +32,13 @@ public class DisplayReviewsServlet extends HttpServlet {
 
       long id = entity.getKey().getId();
       long timestamp = entity.getLong("timestamp");
+      String college = entity.getString("college");
+      String location = entity.getString("location");
       String name = entity.getString("name");
       double rating = entity.getDouble("rating");
       String description = entity.getString("description");
 
-      Review reviewObject = new Review(id, timestamp, name, rating, description);
+      Review reviewObject = new Review(id, timestamp, college, location, name, rating, description);
       reviews.add(reviewObject);
     }
 
