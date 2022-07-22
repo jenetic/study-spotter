@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
+
+#content {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 110px;
+    width: 650px;
+    margin-bottom: 50px;
+  }
+
+.fade-in-image {
+    animation: fadeIn 8s;
+    -webkit-animation: fadeIn 8s;
+    -moz-animation: fadeIn 8s;
+    -o-animation: fadeIn 8s;
+    -ms-animation: fadeIn 8s;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
