@@ -8,6 +8,19 @@
     margin-bottom: 50px;
   }
 
+p {
+    text-align: center;
+    font-family: poppins;
+    font-size: 20px;
+    color: #000000;
+  }
+
+body {
+    background-image: url('images/bg.png');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .fade-in-image {
     animation: fadeIn 8s;
     -webkit-animation: fadeIn 8s;
