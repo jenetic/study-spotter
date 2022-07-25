@@ -3,7 +3,7 @@
 :root {
     --button: rgb(10, 178, 133);
     --bg: #ffffff;
-    --text: rgb(255, 255, 255);
+    --text: rgb(0, 0, 0);
 
 }
 
@@ -27,12 +27,11 @@ body {
 
 .menubar {
     font-size: 20px;
-    background-color: black;
     font-family: 'Inconsolata', monospace;
     padding-left: 10px;
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 
 
 .example::-webkit-scrollbar {
@@ -83,10 +82,12 @@ p {
     padding-left: 10px;
     display: flex;
     flex-direction: column;
+    max-width: 1100px;
 }
 
 .all{
-
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .smaller_text {
@@ -118,6 +119,7 @@ p {
 }
 
 .map {
+    padding-top: 40px;
     border-radius: 10%;
 }
 
@@ -138,11 +140,13 @@ a {
 
 /* Style page content */
 #card-collection {
-    margin-left: 1150px;
+    margin-left: 1110px;
     /* Same as the width of the sidebar */
 }
 
-
+.blacken{
+    color: black;
+}
 .titles{
    color: rgb(0, 162, 255);
 }
@@ -167,7 +171,7 @@ img {
 
 .card {
     padding: 5px 10px;
-    width: 400px;
+    width: 300px;
     border-radius: 4px;
     background-color: rgb(0, 162, 255);
 }
