@@ -22,21 +22,6 @@ const routes = {
         title: "Home | " + pageTitle,
         description: "this is the homepage"
     },
-    ucla: {
-        template: "/templates/colleges/ucla.html",
-        title: "UCLA | " + pageTitle,
-        description: "UCLA page"
-    },
-    ucsd: {
-        template: "/templates/colleges/ucsd.html",
-        title: "UCSD | " + pageTitle,
-        description: "UCSD page"
-    },
-    cornell: {
-        template: "/templates/colleges/cornell.html",
-        title: "Cornell | " + pageTitle,
-        description: "Cornell page"
-    },
     reviews: {
         template: "/templates/reviews.html",
         title: "Reviews | " + pageTitle,
