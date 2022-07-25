@@ -46,9 +46,10 @@ h3, p {
 
 #location-name {
     text-align: center;
-    height: 4rem;
-    font-size: 2rem;
+    height: 5rem;
+    font-size: 1.8rem;
     font-weight: bold;
+    padding: 0;
 }
 
 #leave-review-section {
