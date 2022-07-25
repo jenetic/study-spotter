@@ -32,6 +32,11 @@ const routes = {
         title: "UCSD | " + pageTitle,
         description: "UCSD page"
     },
+    cornell: {
+        template: "/templates/colleges/cornell.html",
+        title: "Cornell | " + pageTitle,
+        description: "Cornell page"
+    },
     reviews: {
         template: "/templates/reviews.html",
         title: "Reviews | " + pageTitle,
