@@ -7,6 +7,18 @@
 
 }
 
+.title{
+    font-size: 25px;
+}
+
+#grad {
+    background-image: linear-gradient(red, yellow);
+  }
+
+.currentPage{
+    font-size: 25px;
+}
+
 body {
     font-family: 'Inconsolata', monospace;
     background-color: var(--bg);
@@ -16,6 +28,7 @@ body {
 .menubar {
     font-size: 20px;
     background-color: black;
+    font-family: 'Inconsolata', monospace;
     padding-left: 10px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

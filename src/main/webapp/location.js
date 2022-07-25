@@ -5,16 +5,22 @@ const getLocations = async (location) => {
     console.log("Test")
     // Fetch data and convert to JenSON
     const response = await fetch('/GetLocations');
-    const reviewList = await response.json();
-    const reviewsLocation = document.getElementById("card-collection");
-    console.log(reviewsLocation)
-    console.log(reviewList)
+    const locationList = await response.json();
+    const locationSegment = document.getElementById("card-collection");
+    console.log(locationSegment)
+    console.log(locationList)
     
-    reviewList.forEach((location) => {
+    locationList.forEach((location) => {
         console.log("YYY")
         console.log(location)
-        reviewsLocation.appendChild(createLocationElement(location));
-        reviewsLocation.appendChild(document.createElement("br"));
+        console.log("#"+location.college)
+        console.log(window.location.hash)
+        if("#"+location.college.toUpperCase() == (window.location.hash.toUpperCase()))
+        {
+            locationSegment.appendChild(createLocationElement(location));
+            locationSegment.appendChild(document.createElement("br"));
+        }
+        
     });
     
     // Update reviews to display location
@@ -60,7 +66,6 @@ const createLocationElement = (location) =>
     console.log(name)
     console.log(college)
     console.log(card);
-
     return card;
     
 
