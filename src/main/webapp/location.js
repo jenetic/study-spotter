@@ -9,10 +9,12 @@ const getLocations = async (location) => {
     const reviewsLocation = document.getElementById("card-collection");
     console.log(reviewsLocation)
     console.log(reviewList)
+    
     reviewList.forEach((location) => {
         console.log("YYY")
         console.log(location)
         reviewsLocation.appendChild(createLocationElement(location));
+        reviewsLocation.appendChild(document.createElement("br"));
     });
     
     // Update reviews to display location
@@ -47,6 +49,7 @@ const createLocationElement = (location) =>
     card.appendChild(header);
     card.appendChild(blurb);
     card.appendChild(desc);
+
     console.log(card);
 
     return card;
