@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-/home/ayu/software-product-sprint/study-spotter/src/main/java/com/google/sps/data/Review.java
-/home/ayu/software-product-sprint/study-spotter/src/main/java/com/google/sps/servlets/SubmitReviewServlet.java
-/home/ayu/software-product-sprint/study-spotter/src/main/java/com/google/sps/servlets/DisplayReviewsServlet.java
-/home/ayu/software-product-sprint/study-spotter/src/main/java/com/google/sps/servlets/GetLocations.java
-/home/ayu/software-product-sprint/study-spotter/src/main/java/com/google/sps/data/Locations.java
-/home/ayu/software-product-sprint/study-spotter/src/main/java/com/google/sps/ServerMain.java
-=======
-/home/sginting/study-spotter/src/main/java/com/google/sps/servlets/DisplayReviewsServlet.java
-/home/sginting/study-spotter/src/main/java/com/google/sps/servlets/SubmitReviewServlet.java
-/home/sginting/study-spotter/src/main/java/com/google/sps/data/Review.java
-/home/sginting/study-spotter/src/main/java/com/google/sps/ServerMain.java
-/home/sginting/study-spotter/src/main/java/com/google/sps/data/Locations.java
->>>>>>> main
+/home/jlam/study-spotter/src/main/java/com/google/sps/data/Locations.java
+/home/jlam/study-spotter/src/main/java/com/google/sps/servlets/DisplayReviewsServlet.java
+/home/jlam/study-spotter/src/main/java/com/google/sps/ServerMain.java
+/home/jlam/study-spotter/src/main/java/com/google/sps/servlets/SubmitReviewServlet.java
+/home/jlam/study-spotter/src/main/java/com/google/sps/data/Review.java
+/home/jlam/study-spotter/src/main/java/com/google/sps/servlets/GetLocations.java

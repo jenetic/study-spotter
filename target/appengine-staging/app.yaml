@@ -1,0 +1,6 @@
+runtime: java11
+
+handlers:
+  - url: /stylesheets
+    static_dir: stylesheets
+  
