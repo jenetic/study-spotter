@@ -1,138 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
-
 :root {
     --text: #26547C;
     --accent: #F05948;
     --leave-review-block: #ffdd8f;
     --input-block: #ffc56e;
-    --review-block: #dbeeff;
+    --link: #42a6fd;
 }
 
-body, textarea, input {
-    font-family: 'Inconsolata', monospace;
+body {
+    background-color: rgb(255, 247, 236);
+}
+
+#nav-bar a {
+    text-decoration: none;
     color: var(--text);
-}
-
-h3, p {
-    margin: 0;
-    padding: 0;
-}
-
-.wrapper {
-    margin: 1rem 15%;
-    display: flex;
-    flex-direction: column;
-}
-
-.review-heading {
-    border: none;
-    overflow: auto;
-    outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    resize: none;
-    background: transparent;
-
-    width: 100%;
-}
-
-#college-name {
-    text-align: center;
-    height: 3rem;
-    font-size: 3rem;
+    margin: 0rem 0.5rem;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
-#location-name {
-    text-align: center;
-    height: 4rem;
-    font-size: 2rem;
-    font-weight: bold;
+#nav-bar a:hover {
+    color: var(--accent);
 }
 
-#leave-review-section {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem auto;
-    padding: 1rem 1.5rem;
-    background-color: var(--leave-review-block);
-    border-radius: 0.5rem;
+#nav-bar a:active {
+    color: var(--link);
 }
 
-#leave-review-section div {
-    margin: 0;
-    padding: 0;
-    /* display: flex; */
-}
-
-#leave-review-section div p {
-    margin: 0.2rem 0;
-}
-
-#leave-review-header {
-    margin: 0 0 0.5rem;
-}
-
-#review-input {
-    display: flex;
-    flex-direction: column;
-}
-
-#review-input textarea {
-    height: 4rem;
-}
-
-#description {
-    background: transparent;
-    outline: none;
-    border: none;
-    padding: 0.3rem 0.5rem;
-    background-color: var(--input-block);
-    border-radius: 0.5rem;
-    resize: none;
-}
-
-#name-and-rating {
-    display: flex;
-}
-#name-and-rating .pad {
-    padding-right: 1rem;
-}
-
-#name, #rating {
-    background: transparent;
-    outline: none;
-    border: none;
-    border-bottom: solid 2px var(--accent);
-
-}
-
-#name {
-    width: 10rem;
-}
-
-#rating {
-    width: 3.5rem;
-}
-
-#submit-button {
-    margin: 1rem 0 0;
-    padding: 0.5rem 1rem;
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-}
-
-#review-list div {
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: var(--review-block);
-}
-
-.rating-element {
-    margin-bottom: 1rem;
-    font-weight: bold;
+#nav-bar {
+    padding: 20px;
 }

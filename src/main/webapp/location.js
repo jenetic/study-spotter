@@ -20,6 +20,7 @@ const getLocations = async (college, map) => {
         }
     });
     document.getElementById("map").src = localStorage.getItem("location-map");
+    document.getElementById("location-college-name").textContent = localStorage.getItem("location-college");
 }
 
 const createLocationElement = (location) => {

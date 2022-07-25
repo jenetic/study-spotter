@@ -1,0 +1,48 @@
+:root {
+    --text: #26547C;
+    --accent: #F05948;
+    --leave-review-block: #ffdd8f;
+    --input-block: #ffc56e;
+    --link: #42a6fd;
+}
+
+body {
+    color: var(--text);
+}
+
+h3 a {
+    color: var(--accent);
+    text-decoration: none;
+}
+h3 a:hover {
+    color: var(--link);
+}
+
+.card {
+    background-color: var(--leave-review-block);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    /* width: 35vw; */
+}
+
+#location-page {
+    display: flex;
+    justify-content: center;
+}
+
+#map {
+    width: 60vw;
+    height: 80vh;
+}
+
+#location-college-name, #suggested {
+    margin: 0;
+}
+
+#suggested {
+    margin-bottom: 1rem;
+}
+
+#card-collection-wrapper {
+    margin: 0rem 2rem;
+}
