@@ -22,20 +22,15 @@ const routes = {
         title: "Home | " + pageTitle,
         description: "this is the homepage"
     },
-    ucla: {
-        template: "/templates/colleges/ucla.html",
-        title: "UCLA | " + pageTitle,
-        description: "UCLA page"
-    },
-    ucsd: {
-        template: "/templates/colleges/ucsd.html",
-        title: "UCSD | " + pageTitle,
-        description: "UCSD page"
-    },
     reviews: {
         template: "/templates/reviews.html",
         title: "Reviews | " + pageTitle,
         description: "Reviews page"
+    },
+    locations: {
+        template: "/templates/locations.html",
+        title: "Pick a Study Spot| " + pageTitle,
+        description: "College page"
     }
 }
 

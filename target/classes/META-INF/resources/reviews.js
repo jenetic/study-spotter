@@ -86,9 +86,6 @@ const submitReview = () => {
  */
 const loadReviews = async (location, college) => {
 
-    console.log("Mommy")
-    console.log(location)
-    console.log(college)
     if (location != null) {
         localStorage.setItem('location', location);
         localStorage.setItem('college', college);
@@ -99,12 +96,8 @@ const loadReviews = async (location, college) => {
     const reviewList = await response.json();
 
     const reviewsLocation = document.getElementById("review-list");
-    console.log(reviewList)
     reviewList.forEach((review) => {
-        console.log(review)
         if (review.location === localStorage.getItem('location') && review.college === localStorage.getItem('college')) {
-            console.log("***")
-            console.log(review)
             reviewsLocation.appendChild(createReviewElement(review));
         }
     });

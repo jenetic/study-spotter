@@ -1,0 +1,31 @@
+:root {
+    --text: #26547C;
+    --accent: #F05948;
+    --leave-review-block: #ffdd8f;
+    --input-block: #ffc56e;
+    --link: #42a6fd;
+}
+
+body {
+    background-color: rgb(255, 247, 236);
+}
+
+#nav-bar a {
+    text-decoration: none;
+    color: var(--text);
+    margin: 0rem 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#nav-bar a:hover {
+    color: var(--accent);
+}
+
+#nav-bar a:active {
+    color: var(--link);
+}
+
+#nav-bar {
+    padding: 20px;
+}

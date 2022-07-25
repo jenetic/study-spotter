@@ -42,7 +42,6 @@ public class GetLocations extends HttpServlet {
 
     Gson gson = new Gson();
     response.setContentType("application/json;");
-    System.out.println(gson.toJson(locations));
     response.getWriter().println(gson.toJson(locations));
     
   }
