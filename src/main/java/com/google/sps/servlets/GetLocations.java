@@ -34,8 +34,9 @@ public class GetLocations extends HttpServlet {
       long id = entity.getKey().getId();
         String name = entity.getString("Name");
         String time = entity.getString("Time");
+        String college = entity.getString("College");
         String description = entity.getString("Description");
-      Locations locationObject = new Locations(id, name, time, description);
+      Locations locationObject = new Locations(id, name, time, description, college);
       locations.add(locationObject);
     }
 

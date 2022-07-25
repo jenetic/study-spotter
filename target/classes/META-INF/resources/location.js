@@ -34,7 +34,7 @@ const getLocations = async (location) => {
 const createLocationElement = (location) =>
 {
     console.log("EEE");
-    const {description, name, time} = location;
+    const {description, name, time, college} = location;
 
     const card = document.createElement("div" );
     card.setAttribute("class", "card") 
@@ -45,10 +45,11 @@ const createLocationElement = (location) =>
     header.textContent = name;
     blurb.textContent = time;
     desc.textContent = description;
-
     card.appendChild(header);
     card.appendChild(blurb);
     card.appendChild(desc);
+    card.onclick = loadReviews(name, college);
+
 
     console.log(card);
 
@@ -58,6 +59,9 @@ const createLocationElement = (location) =>
     console.log(location)
 }
 
+function temp(){
+    console.log("Temp")
+}
 
 
 window.onload = getLocations();
