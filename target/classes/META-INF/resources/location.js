@@ -3,7 +3,7 @@
  */
 const getLocations = async (location) => {
     console.log("Test")
-    // Fetch data and convert to JSON
+    // Fetch data and convert to JenSON
     const response = await fetch('/GetLocations');
     const reviewList = await response.json();
     const reviewsLocation = document.getElementById("card-collection");
@@ -39,18 +39,26 @@ const createLocationElement = (location) =>
     const card = document.createElement("div" );
     card.setAttribute("class", "card") 
     const header = document.createElement('h3');
+    const link = document.createElement('a');
     const blurb = document.createElement('p');
     const desc = document.createElement('p');
 
-    header.textContent = name;
+    link.textContent = name;
+
+    link.href = "#reviews"
+    link.onclick = function() {loadReviews(name, college)};
+
+    header.appendChild(link)
+    card.appendChild(header);
+
     blurb.textContent = time;
-    desc.textContent = description;
+    desc.textContent = description
     card.appendChild(header);
     card.appendChild(blurb);
     card.appendChild(desc);
-    card.onclick = loadReviews(name, college);
-
-
+    console.log("LLL")
+    console.log(name)
+    console.log(college)
     console.log(card);
 
     return card;

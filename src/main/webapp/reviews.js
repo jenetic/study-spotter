@@ -86,6 +86,9 @@ const submitReview = () => {
  */
 const loadReviews = async (location, college) => {
 
+    console.log("Mommy")
+    console.log(location)
+    console.log(college)
     if (location != null) {
         localStorage.setItem('location', location);
         localStorage.setItem('college', college);
@@ -96,16 +99,26 @@ const loadReviews = async (location, college) => {
     const reviewList = await response.json();
 
     const reviewsLocation = document.getElementById("review-list");
+    console.log(reviewList)
     reviewList.forEach((review) => {
+        console.log(review)
         if (review.location === localStorage.getItem('location') && review.college === localStorage.getItem('college')) {
+            console.log("***")
+            console.log(review)
             reviewsLocation.appendChild(createReviewElement(review));
         }
     });
     
     // If page is refreshed, location (function's argument) would be null since loadReviews() is called on load
     // so use info from local storage and don't set a new one
+
+    
+    
     document.getElementById("location-name").value = localStorage.getItem('location');
     document.getElementById("college-name").value = localStorage.getItem('college');
+    
+    
+   console.log("CALLED")
 }
 
 window.onload = loadReviews();
