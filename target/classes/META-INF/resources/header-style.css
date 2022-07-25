@@ -1,0 +1,25 @@
+
+a {
+    text-align: center;
+    font-family: poppins;
+    font-size: 20px;
+    color: #000000;
+}
+
+a:link {
+    text-decoration: none;
+  }
+
+a:hover {
+    color: #F05948;
+    text-decoration: none;
+}
+
+a:active {
+    color: #F05948;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+  }
