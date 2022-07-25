@@ -19,6 +19,40 @@ const isNumberBetween = (str, start, end) => {
 }
 
 /**
+ * Convert unix timestamp to date in form mm/dd/yyyy
+ */
+const timestampToDate = timestamp => {
+    const date = new Date(timestamp);
+    const month = parseInt(date.getMonth()) + 1;
+    return month + "/" + date.getDate() + "/" + date.getFullYear();
+}
+
+/**
+ * Creates element that represents a review
+ * @param {Review}
+ * @return {Element}
+ */
+const createReviewElement = (review) => {
+    const { timestamp, name, rating, description } = review;
+
+    const reviewElement = document.createElement('div');
+    const nameAndDateElement = document.createElement('h3');
+    const ratingElement = document.createElement('p');
+    ratingElement.setAttribute('class', 'rating-element');
+    const descriptionElement = document.createElement('p');
+
+    ratingElement.textContent = rating + " / 5 Stars" ;
+    nameAndDateElement.textContent = name + ' at ' + timestampToDate(timestamp);
+    descriptionElement.textContent = description;
+
+    reviewElement.appendChild(nameAndDateElement);
+    reviewElement.appendChild(ratingElement);
+    reviewElement.appendChild(descriptionElement);
+
+    return reviewElement;
+}
+
+/**
  * Submits form and does POST request to datastore
  */
 const submitReview = () => {
@@ -50,7 +84,12 @@ const submitReview = () => {
 /**
  * Loads reviews onto DOM
  */
-const loadReviews = async (location) => {
+const loadReviews = async (location, college) => {
+
+    if (location != null) {
+        localStorage.setItem('location', location);
+        localStorage.setItem('college', college);
+    }
 
     // Fetch data and convert to JSON
     const response = await fetch('/display-reviews');
@@ -58,59 +97,15 @@ const loadReviews = async (location) => {
 
     const reviewsLocation = document.getElementById("review-list");
     reviewList.forEach((review) => {
-        reviewsLocation.appendChild(createReviewElement(review));
+        if (review.location === localStorage.getItem('location') && review.college === localStorage.getItem('college')) {
+            reviewsLocation.appendChild(createReviewElement(review));
+        }
     });
     
-    // Update reviews to display location
-
-    // If page is refreshed, location would be null, so use info from local storage and don't set a new one
-    if (location != null) {
-        localStorage.setItem('location', location);
-        console.log("location is not null");
-    }
-    
-    document.getElementById("location-name").textContent = localStorage.getItem('location');
-}
-
-/**
- * Convert unix timestamp to date in form mm/dd/yyyy
- */
-const timestampToDate = timestamp => {
-    const date = new Date(timestamp);
-    const month = parseInt(date.getMonth()) + 1;
-    return month + "/" + date.getDate() + "/" + date.getFullYear();
-}
-
-/**
- * Creates element that represents a review
- * @param {Review}
- * @return {Element}
- */
-const createReviewElement = (review) => {
-    const { timestamp, name, rating, description } = review;
-
-    const reviewElement = document.createElement('div');
-    const ratingElement = document.createElement('h3');
-    const nameElement = document.createElement('p');
-    const dateElement = document.createElement('span');
-    const descriptionElement = document.createElement('p');
-
-    ratingElement.textContent = rating + " / 5 Stars";
-    nameElement.textContent = name;
-    dateElement.textContent = ' at ' + timestampToDate(timestamp);
-    descriptionElement.textContent = description;
-
-    nameElement.appendChild(dateElement);
-    reviewElement.appendChild(ratingElement);
-    reviewElement.appendChild(nameElement);
-    reviewElement.appendChild(descriptionElement);
-
-    return reviewElement;
+    // If page is refreshed, location (function's argument) would be null since loadReviews() is called on load
+    // so use info from local storage and don't set a new one
+    document.getElementById("location-name").value = localStorage.getItem('location');
+    document.getElementById("college-name").value = localStorage.getItem('college');
 }
 
 window.onload = loadReviews();
-
-// Keep track of current location in local storage
-const storeCurrentLocation = () => {
-    
-}
