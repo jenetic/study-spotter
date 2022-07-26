@@ -1,5 +1,5 @@
-com/google/sps/servlets/DisplayReviewsServlet.class
+com/google/sps/data/Review.class
 com/google/sps/ServerMain.class
 com/google/sps/data/Locations.class
-com/google/sps/data/Review.class
 com/google/sps/servlets/SubmitReviewServlet.class
+com/google/sps/servlets/DisplayReviewsServlet.class
