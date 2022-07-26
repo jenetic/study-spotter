@@ -54,6 +54,13 @@
       <version>1.14.2</version>
     </dependency>
 
+    <!--Cloud Translation Java library-->
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-translate</artifactId>
+      <version>1.70.0</version>
+    </dependency>
+
   </dependencies>
 
   <build>

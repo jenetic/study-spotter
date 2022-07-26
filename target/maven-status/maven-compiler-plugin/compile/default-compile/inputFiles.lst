@@ -1,6 +1,6 @@
-/home/jlam/study-spotter/src/main/java/com/google/sps/data/Locations.java
-/home/jlam/study-spotter/src/main/java/com/google/sps/servlets/DisplayReviewsServlet.java
-/home/jlam/study-spotter/src/main/java/com/google/sps/ServerMain.java
-/home/jlam/study-spotter/src/main/java/com/google/sps/servlets/SubmitReviewServlet.java
-/home/jlam/study-spotter/src/main/java/com/google/sps/data/Review.java
-/home/jlam/study-spotter/src/main/java/com/google/sps/servlets/GetLocations.java
+/home/shibane/software-product-sprint/study-spotter/src/main/java/com/google/sps/data/Review.java
+/home/shibane/software-product-sprint/study-spotter/src/main/java/com/google/sps/servlets/DisplayReviewsServlet.java
+/home/shibane/software-product-sprint/study-spotter/src/main/java/com/google/sps/servlets/GetLocations.java
+/home/shibane/software-product-sprint/study-spotter/src/main/java/com/google/sps/servlets/SubmitReviewServlet.java
+/home/shibane/software-product-sprint/study-spotter/src/main/java/com/google/sps/ServerMain.java
+/home/shibane/software-product-sprint/study-spotter/src/main/java/com/google/sps/data/Locations.java
